@@ -198,5 +198,5 @@ export async function hasClass(targetElement: ElementFinder, className: string) 
  */
 export async function scrollToElement(targetElement: ElementFinder, alignToTop = true) {
     await WaitHelpers.waitForElementToBePresented(targetElement);
-    await browser.executeScript('arguments[0].scrollIntoView(' + alignToTop + ');', targetElement);
+    await browser.executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", targetElement);
 }

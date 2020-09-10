@@ -67,6 +67,6 @@ export async function waitForFirstSearchResultToBeDisplayed(searchedText: string
 
 export async function verifySearchAutocompleteIsntEmpty(searchedText: string) {
     await CommonPage.verifySearchAutocompleteIsDisplayed();
-    await this.waitForFirstSearchResultToBeDisplayed(searchedText)
+    await this.waitForFirstSearchResultToBeDisplayed(searchedText);
     await CommonPage.verifySearchAutocompleteIsntEmpty();
 }
