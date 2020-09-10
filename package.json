@@ -1,0 +1,46 @@
+{
+    "name": "skyeng-tech-task",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "postinstall": "webdriver-manager update --versions.chrome=85.0.4183.83 --standalone=false --gecko=false",
+        "e2e-lint": "tslint --project tsconfig.json --config tslint.json",
+        "e2e-lint:fix": "npm run lint -- --fix",
+        "e2e-validate": "npm-run-all --parallel build lint",
+        "e2e-clean": "rm -rf e2e/auto-generated",
+        "e2e": "protractor $PROTRACTOR_CONF --suite=$SUITE",
+        "e2e-generate-allure-report": "allure generate e2e/auto-generated/allure-results -o e2e/auto-generated/allure-report --clean",
+        "e2e-open-allure-report": "allure open e2e/auto-generated/allure-report"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "jasmine-core": "^3.5.0",
+        "jasmine-reporters": "^2.3.2",
+        "jasmine-spec-reporter": "^4.1.1",
+        "jasmine-allure-reporter": "^1.0.2",
+        "log4js": "^6.1.2",
+        "rxjs": "^6.5.4",
+        "mime-types": "^2.1.26",
+        "http-status-codes": "^1.4.0",
+        "request-promise-native": "^1.0.8",
+        "json-typescript-mapper": "^1.1.3",
+        "allure-commandline": "^2.13.0"
+    },
+    "devDependencies": {
+        "@angular/core": "^9.0.1",
+        "@angular/compiler": "^9.0.1",
+        "@types/mime-types": "^2.1.0",
+        "@types/jasmine": "^3.5.4",
+        "@types/jasminewd2": "^2.0.8",
+        "@types/node": "~10.1.4",
+        "zone.js": "^0.10.2",
+        "typescript": "^3.7.5",
+        "codelyzer": "^5.2.1",
+        "protractor": "^5.4.3",
+        "ts-node": "^8.6.2",
+        "tslint": "^6.0.0",
+        "tslint-jasmine-rules": "^1.6.0"
+    }
+}
